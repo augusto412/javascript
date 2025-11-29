@@ -9,7 +9,7 @@ const gerenciadorDeNotas ={
     },
 
     buscarNota: function(titulo) {
-        return this.notas.find((nota) => nota.titulo === titulo);
+        return this.notas.find((nota) => nota.titul.includes(titulo));
     },
 
     FiltraNota: function(titulo){
@@ -26,6 +26,17 @@ const gerenciadorDeNotas ={
        gerenciadorDeNotas.notas[index] = {id: id, titulo:tituloEditado, conteudo:conteudoEditado};
 
        return gerenciadorDeNotas.notas;
+    },
+
+    excluirNota: function (id){
+        const index = gerenciadorDeNotas.notas.findIndex((nota) => nota.id === id);
+
+        if(index < 0){
+            return "nota não encontrada!"
+        }
+        gerenciadorDeNotas.notas.splice( index, 1);
+
+        return gerenciadorDeNotas.notas
     }
 }
 
@@ -34,6 +45,4 @@ gerenciadorDeNotas.adicionarNota(3,"comprar novo teclado", "esse esta horrivbel"
 gerenciadorDeNotas.adicionarNota(4,"estudar 4 aulas por dia!", "modulo 2 de JS!");
 gerenciadorDeNotas.adicionarNota(5,"lembrar de tomar cafe antes das aulas", "voce sempre deixar esfirar");
 
-gerenciadorDeNotas.atualizarNota(2, "nota editada", "nova nota")
-
-console.log(gerenciadorDeNotas.FiltraNota("aulas"))
+console.log(gerenciadorDeNotas.excluirNota (2))
