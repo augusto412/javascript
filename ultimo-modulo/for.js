@@ -37,9 +37,15 @@ const aluno = [
     'javascript'
 ]
 
+// for in
+
 for (let chave in aluno){
     if(aluno[chave] === 'javascript'){
         encontrouCurso = true;
         break;
     }
+};
+
+for ( let item of cor){
+    console.log (item)
 }
