@@ -25,4 +25,5 @@ console.log(contato);
 let ranking = ['joão', 'maria', 'pedro'];
 
 [ranking[0], ranking[1]] = [ranking[1], ranking[0]];
-console.log(ranking)
+console.log(ranking);
+
